@@ -8,18 +8,26 @@
 
 
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
-path: infrared_ray  # dataset root dir
+path: inf-ray-mocs  # dataset root dir
 train: images/train  # train images (relative to 'path') 4 images
 val: images/val  # val images (relative to 'path') 4 images
 test:  # test images (optional)
 
 # Classes
 names:
-  0: 0
-  1: 1
-  2: 2
-  3: 3
-  4: 4
+  0: Crane
+  1: Worker
+  2: Excavator
+  3: Hanging head
+  4: Static crane
+  5: Pump truck
+  6: Concrete mixer
+  7: Other vehicle
+  8: Loader
+  9: Truck
+  10: Pile driving
+  11: Bulldozer
+  12: Roller
 
 
 
