@@ -1,5 +1,5 @@
 from ultralytics import YOLO
 
-model = YOLO('yolov8m.pt')
+model = YOLO('runs/detect/train/weights/last.pt')
 
-model.train(data='yolo_common.yaml',workers=0, epochs=150,batch=16,imgsz=512)
+model.train(data='D:/codes/py/yolov8-main/ray_infrarred.yaml',workers=0, epochs=120,batch=16,imgsz=512,resume=True)
