@@ -16,10 +16,10 @@ def convert_to_grayscale(input_folder, output_folder):
             continue
 
         # 打开图像并将其转换为灰度图像+裁剪+调整大小
-        # image = Image.open(input_path).convert("L")
+        image = Image.open(input_path).convert("L")
         # rangle = (100, 50, 640, 440)
         # image = image.crop(rangle)  # 使用Image的crop函数，从截图中再次截取我们需要的区域
-        image = Image.open(input_path).resize((512, 512))
+        image = image.resize((512, 512))
         # 构建输出文件路径
         output_path = os.path.join(output_folder, filename)
 
@@ -30,8 +30,8 @@ def convert_to_grayscale(input_folder, output_folder):
 
 
 # 指定输入和输出文件夹路径
-input_folder_path = "../datasets/model_construction_common/images/val"
-output_folder_path = "../datasets/model_construction_common/val_512"
+input_folder_path = "D:/codes/py/yolov8-main/datasets/mytrain/val"
+output_folder_path = "D:/codes/py/yolov8-main/datasets/mytrain/val_512"
 
 # 调用函数进行转换
 convert_to_grayscale(input_folder_path, output_folder_path)
