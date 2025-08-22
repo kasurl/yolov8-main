@@ -143,13 +143,13 @@ class KAISTBase(Dataset):
 
 class KAISTTrain(KAISTBase):
     def __init__(self, **kwargs):
-        super().__init__(txt_file="data/KAIST512/KAIST_512_train.txt", 
-                         data_root="dataset/image/train",
+        super().__init__(txt_file="/root/autodl-tmp/PID/PID/dataset/crack/train.txt",
+                         data_root="/root/autodl-tmp/PID/PID/dataset/crack/train",
                          **kwargs)
 
 
 class KAISTVal(KAISTBase):
     def __init__(self, flip_p=0., **kwargs):
-        super().__init__(txt_file="data/KAIST512/KAIST_512_test.txt",
-                         data_root="dataset/image/val",
+        super().__init__(txt_file="/root/autodl-tmp/PID/PID/dataset/crack/val.txt",
+                         data_root="/root/autodl-tmp/PID/PID/dataset/crack/val",
                          flip_p=flip_p, **kwargs)
