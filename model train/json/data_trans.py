@@ -1,4 +1,4 @@
-import json
+#python classify_dataset.py --source ./original_dataset --target ./split_datasetimport json
 import os
 import argparse
 from tqdm import tqdm
