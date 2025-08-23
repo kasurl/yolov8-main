@@ -71,5 +71,6 @@ if __name__ == "__main__":
     parser.add_argument('--source', required=True, help='需要分类的数据集所在文件夹')
     parser.add_argument('--target', required=True, help='分类后数据存放的目标文件夹')
 
+#   python image_solve/split/classify_dataset.py --txt_folder=/path/to/images --source=/path/to/images/train --target=/path/to/images/split
     args = parser.parse_args()
     classify_dataset(args.txt_folder, args.source, args.target)

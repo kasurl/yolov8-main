@@ -16,7 +16,7 @@ def convert_to_grayscale(input_folder, output_folder):
             continue
 
         # 打开图像并将其转换为灰度图像+裁剪+调整大小
-        image = Image.open(input_path).convert("L")
+        # image = Image.open(input_path).convert("L")
         # rangle = (100, 50, 640, 440)
         # image = image.crop(rangle)  # 使用Image的crop函数，从截图中再次截取我们需要的区域
         image = image.resize((512, 512))

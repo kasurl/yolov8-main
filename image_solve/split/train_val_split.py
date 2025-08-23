@@ -53,5 +53,6 @@ if __name__ == "__main__":
     parser.add_argument('--val_count', type=int, required=True, help='验证集的图像数量')
     args = parser.parse_args()
 
+    #   python image_solve/split/train_val_split.py --folder=/path/to/images --val_count=20%
     # 调用函数进行划分
     split_images(args.folder, args.val_count)

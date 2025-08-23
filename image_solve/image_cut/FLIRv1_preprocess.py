@@ -4,10 +4,10 @@ from PIL import Image
 import os
 from tqdm import tqdm
 
-input_visible_path = 'datasets/crack_data/data4_split/val'
-output_visible_path = 'datasets/crack_data/visible/val'
-input_ir_path = 'datasets/crack_data/data1_split/val'
-output_ir_path = 'datasets/crack_data/lwir/val'
+input_visible_path = 'datasets/crack_data/模态4'
+output_visible_path = 'datasets/crack_data/visible'
+input_ir_path = 'datasets/crack_data/模态1'
+output_ir_path = 'datasets/crack_data/lwir'
 
 os.makedirs(output_visible_path, exist_ok=True)
 os.makedirs(output_ir_path, exist_ok=True)
@@ -28,9 +28,8 @@ for ir_name in tqdm(ir_names):
         if h_visi == 1024 and w_visi == 1280:
             img_ir = img_ir[32:448, 70:590, :]
         elif h_visi == 480 and w_visi == 640:
-            img_visible = img_visible[45:429, 98:578, :]
-            img_ir = img_ir[45:429, 98:578, :]
-            img_ir = cv2.cvtColor(img_ir, cv2.COLOR_BGR2GRAY)
+            img_visible = img_visible[30:480, 40:640, :]
+            img_ir = img_ir[30:480, 40:640, :]
         elif h_visi == 1536 and w_visi == 2048:
             img_ir = img_ir[35:419, 65:545, :]
         elif h_visi == 1600 and w_visi == 1800:
