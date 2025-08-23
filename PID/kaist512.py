@@ -9,25 +9,25 @@ import torchvision.transforms.functional as tf
 from copy import deepcopy
 
 def random_crop(image1, image2):
-    min_ratio = 0.5
-    max_ratio = 1
+    # min_ratio = 0.5
+    # max_ratio = 1
+    #
+    # w, h = image1.size
+    # ratio = random.random()
+    # scale = min_ratio + ratio * (max_ratio - min_ratio)
+    # new_h = int(h * scale)
+    # new_w = int(w * scale)
+    # y = np.random.randint(0, h - new_h)
+    # x = np.random.randint(0, w - new_w)
 
-    w, h = image1.size
-    ratio = random.random()
-    scale = min_ratio + ratio * (max_ratio - min_ratio)
-    new_h = int(h * scale)
-    new_w = int(w * scale)
-    y = np.random.randint(0, h - new_h)
-    x = np.random.randint(0, w - new_w)
-
-    image1 = image1.crop((x, y, x + new_w, y + new_h))
-    image2 = image2.crop((x, y, x + new_w, y + new_h))
+    #image1 = image1.crop((x, y, x + new_w, y + new_h))
+    #image2 = image2.crop((x, y, x + new_w, y + new_h))
 
     return image1, image2
 
 
 class my_transform_crop():
-    def __init__(self, crop_p=0.5):
+    def __init__(self, crop_p=1):
         self.crop_p=crop_p
     def crop_enhance(self, image1, image2):
         if random.random() <= self.crop_p:
@@ -143,13 +143,13 @@ class KAISTBase(Dataset):
 
 class KAISTTrain(KAISTBase):
     def __init__(self, **kwargs):
-        super().__init__(txt_file="/root/autodl-tmp/PID/PID/dataset/crack/train.txt",
-                         data_root="/root/autodl-tmp/PID/PID/dataset/crack/train",
+        super().__init__(txt_file="/root/autodl-tmp/PID/PID/crack/train.txt",
+                         data_root="/root/autodl-tmp/PID/PID/crack/train",
                          **kwargs)
 
 
 class KAISTVal(KAISTBase):
     def __init__(self, flip_p=0., **kwargs):
-        super().__init__(txt_file="/root/autodl-tmp/PID/PID/dataset/crack/val.txt",
-                         data_root="/root/autodl-tmp/PID/PID/dataset/crack/val",
+        super().__init__(txt_file="/root/autodl-tmp/PID/PID/crack/val.txt",
+                         data_root="/root/autodl-tmp/PID/PID/crack/val",
                          flip_p=flip_p, **kwargs)
