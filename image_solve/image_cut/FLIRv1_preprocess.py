@@ -4,10 +4,10 @@ from PIL import Image
 import os
 from tqdm import tqdm
 
-input_visible_path = '../../datasets/data_ray/mask/train'
-output_visible_path = '../../datasets/PID/mask/train'
-input_ir_path = '../../datasets/data_ray/mask/val'
-output_ir_path = '../../datasets/PID/mask/val'
+input_visible_path = '../../datasets/data_ray/train/lwir'
+output_visible_path = '../../datasets/PID/train/lwir'
+input_ir_path = '../../datasets/data_ray/val/lwir'
+output_ir_path = '../../datasets/PID/train/val'
 
 os.makedirs(output_visible_path, exist_ok=True)
 os.makedirs(output_ir_path, exist_ok=True)
